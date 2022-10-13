@@ -1,0 +1,78 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+          <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" name="name" id="name" class="form-control" placeholder="name"
+                  ngModel required>
+                </div>
+              </div>
+            </div>
+            <br>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" name="email" id="email" ngModel placeholder="name@example.com"
+                email
+                #email="ngModel" required>
+                <span class="help-back" *ngIf="!email.valid && email.touched"> Please enter a valid information </span>
+                </div>
+              </div>
+            </div>
+            <br>  
+      
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="phoneNo" class="form-label">phone No.</label>
+                  <input type="text" id="phoneNo" name="phoneNo" class="form-control"
+                  ngModel
+                  #phoneNo="ngModel" pattern="^\d{3}?\d{3}\d{4}$"
+                  required>
+                  <span class="help-back" *ngIf="!phoneNo.valid && phoneNo.touched"> Please enter a valid phoneNo </span>
+                </div>
+              </div>
+            </div>
+            <br>
+      
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="dob" class="form-label">Date Of Birth</label>
+                  <input type="date" id="dob" name="bod" class="form-control"
+                  ngModel required>
+                </div>
+              </div>
+            </div>
+            <br>
+      
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="address" class="form-label">Address</label>
+                  <textarea id="address" name="address" class="form-control" rows="3"
+                  ngModel required></textarea>
+                </div>
+              </div>
+            </div>
+            <br>
+    
+            <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <button class="button" type="submit" class="button1 btn btn-primary" (click)="onDone()" [disabled]="!myForm.valid">Done</button>  
+                  </div>
+                </div>
+              </div>
+            
+          </form>
+        </div>
+      </div>
+</div>
+

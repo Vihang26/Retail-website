@@ -1,0 +1,12 @@
+.row-basket{
+    margin: auto;
+  width: 15%;
+  height: 50px;
+  font-size: 30px;
+  /* padding: 10px; */
+}
+
+.btn {
+  margin-left: 10px;
+  margin-right: 10px;
+}

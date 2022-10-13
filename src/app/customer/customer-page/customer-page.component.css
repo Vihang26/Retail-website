@@ -1,0 +1,9 @@
+.btn {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.logout{
+    align-items: center;
+    flex-direction: column-reverse;
+}

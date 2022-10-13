@@ -1,0 +1,49 @@
+  <div class="container">
+    <!-- <div class="btn-group" style="margin-bottom: 20px;" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary">Id</button>
+        <button type="button" class="btn btn-secondary">Name</button>
+        <button type="button" class="btn btn-secondary">Phone No.</button>
+      </div> -->
+
+      <div class="row">
+        <div class="col-md-12">
+
+          <input class="form-control me-2" name="search" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="filterSearch">
+                    
+         <br>
+
+        </div>
+      </div>
+
+      <div class="customer-data">
+        <table class="table">
+            <thead>
+              <tr >
+                <th scope="col">Sr. No.</th>
+                <th scope="col">id</th>
+                <th scope="col">Name</th>
+                <th scope="col">email</th>
+                <th scope="col">Phone No.</th>
+                <th scope="col">Date & Time</th>
+            
+              </tr>
+            </thead>
+            <tbody>
+                <tr 
+                  *ngFor="let customer of arr | filter : filterSearch; let i=index" 
+                  (click)="onClick(customer.id)"
+                  style="cursor: pointer">
+                  <th scope="row">{{ i }}</th>
+                  <td>{{ customer.id }}</td>
+                  <td>{{ customer.name }}</td>
+                  <td>{{ customer.email }}</td>
+                  <td>{{ customer.phoneNo }}</td>
+                  <td>{{customer.dateTime | date:'dd.MM.yyyy H:mm:ss' }}</td>
+                 
+                </tr>
+              
+            </tbody>
+          </table>
+          
+      </div>
+  </div>
