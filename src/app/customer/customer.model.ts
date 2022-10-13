@@ -5,7 +5,7 @@ export class Customer {
     public phoneNo : number;
     public address: string;
     public dateTime: string;
-    
+     
     constructor(id: string , name : string, email : string, phoneNo : number,address: string, dateTime:string){
         this.id = id;
         this.name = name;
