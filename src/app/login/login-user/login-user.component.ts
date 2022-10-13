@@ -41,7 +41,7 @@ export class LoginUserComponent implements OnInit {
     customer.email === data.email && customer.password === data.password);
 
     if(this.result){
-      this.router.navigate(['customer/customer-page'])
+      this.router.navigate(['customer/customer-page/new'])
       localStorage.setItem("loginKey",JSON.stringify(true));
     }
     else{

@@ -24,13 +24,14 @@ export class CustomerExistingComponent implements OnInit {
         this.arr = this._getdata.getData()
         console.log(this.arr);
         // console.log (this.arr.filter(ele => ele.id === 'A751'));
+        this.sortByLastModifiedDesc;
   }
 
-  // get sortByLastModifiedDesc() {
-  //   return this.arr.sort((a:any, b:any) => {
-  //     return <any>new Date(b.dateTime) - <any>new Date(a.dateTime);
-  //   });
-  // }
+  get sortByLastModifiedDesc() {
+    return this.arr.sort((a:any, b:any) => {
+      return <any>new Date(b.dateTime) - <any>new Date(a.dateTime);
+    });
+  }
 
   onClick(id: string){
     // this._getdata.sendId(id)
