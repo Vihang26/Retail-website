@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router,ActivatedRoute } from '@angular/router';
+import { Router,ActivatedRoute, RouterLink } from '@angular/router';
 import { Customer } from 'src/app/customer/customer.model';
 import { DataservicesService } from 'src/app/service/dataservices.service';
 
@@ -23,6 +23,7 @@ export class ProductHeaderComponent implements OnInit {
     this.allData = this._getdata.getData();
     const filterd = this.allData.filter(ele => ele.id === this.id);
     this.arr = filterd[0];
+    console.log(this.arr);
     
   }
 
@@ -41,7 +42,10 @@ export class ProductHeaderComponent implements OnInit {
   }
 
   edit(){
-    this.router.navigate(['../','customer','customer-page' ,'new'])
+    this.router.navigate(['../customer/customer-page/new'])
+    console.log(this.id);
+
+    
   }
 
 

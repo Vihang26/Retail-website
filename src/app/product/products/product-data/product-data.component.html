@@ -1,8 +1,10 @@
 <nav class="navbar bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand">Navbar</a>
+    <a class="circular--landscape" href="#">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYTxXD9xU9PLqcdGsOCwCymOONhDVFjJ0ZfGJ7aZoqivwtpJXbT0JYUJeZSBH0p3Q8KtQ&usqp=CAU" style="border-radius:50% ;" alt="" width="50" height="50">
+    </a>
     <form class="d-flex" role="search">
-      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" 
+      <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" 
       fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16"   
       (click)="gotoBascket()">
         <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
@@ -10,24 +12,23 @@
     </form>
   </div>
 </nav>
-<br>
-
-  <div class="col-md-6">
-
-    <input class="form-control me-2" name="search" type="search" placeholder="Search" >
-  </div>
 
 <section class="h-100" style="background-color: #eee;">
-    <div class="container h-100 py-5">
+    <div class="container h-100 py-3">
       <div class="row d-flex justify-content-center align-items-center ">
         <div class="col-10">
-          <div class="card rounded-3 mb-4" *ngFor="let product of availProducts">
-            <div class="card-body p-4">
+
+          <div class="col-md-10">
+            <input class="form-control me-2" name="search" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="filterSearch" >
+          </div>
+          <br>
+          <div class="card rounded-3 mb-4" *ngFor="let product of availProducts | filter : filterSearch ">
+            <div class="card-body p-1">
               <div class="row d-flex justify-content-between align-items-center">
                 <div class="col-md-2 col-lg-2 col-xl-2">
                   <img
                     [src]="product.imgPath"
-                    class="img-fluid rounded-3" alt="iPhone x">
+                    class="img-fluid rounded-3" alt="iPhone x" style="height: 120px; width: 120px; ">
                 </div>
                 <div class="col-md-3 col-lg-3 col-xl-3">
                   <p class="lead fw-normal mb-2">{{product.name}}</p>

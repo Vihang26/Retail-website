@@ -19,7 +19,7 @@
         <table class="table">
             <thead>
               <tr >
-                <th scope="col">Sr. No.</th>
+                <!-- <th scope="col">Sr. No.</th> -->
                 <th scope="col">id</th>
                 <th scope="col">Name</th>
                 <th scope="col">email</th>
@@ -33,7 +33,7 @@
                   *ngFor="let customer of arr | filter : filterSearch; let i=index" 
                   (click)="onClick(customer.id)"
                   style="cursor: pointer">
-                  <th scope="row">{{ i }}</th>
+                  <!-- <th scope="row">{{ i }}</th> -->
                   <td>{{ customer.id }}</td>
                   <td>{{ customer.name }}</td>
                   <td>{{ customer.email }}</td>

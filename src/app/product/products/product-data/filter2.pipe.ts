@@ -3,7 +3,7 @@ import { Pipe, PipeTransform } from "@angular/core";
 @Pipe({
     name: 'filter'
 })
-export class FilterPipe  implements PipeTransform {
+export class FilterPipe2  implements PipeTransform {
     
     transform(value: any, filterString : any):any {
         const resultArray = [];   
@@ -13,9 +13,7 @@ export class FilterPipe  implements PipeTransform {
         filterString = filterString.toLowerCase();
         for(const item of value){
             if(item['name'].toLowerCase().includes(filterString) || 
-                item['email'].toLowerCase().includes(filterString)|| 
-                item['id'].toLowerCase().includes(filterString) || 
-                item['phoneNo'].toLowerCase().includes(filterString)){
+                item['company'].toLowerCase().includes(filterString)){
                 resultArray.push(item);
             }
         }

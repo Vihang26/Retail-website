@@ -32,15 +32,12 @@ export class CustomerNewComponent implements OnInit {
   onSubmit(form: NgForm){
     this._customerData.setdata(form.value);
   //  this.localItem = localStorage.getItem("customerData");
-
     // this.router.navigate(['../','/nextpage',this.id]),{relativeTo:this.route}
 
     this.router.navigate(['../','existing'],{relativeTo:this.route})
 
     // localStorage.setItem("Date&Time",JSON.stringify(this.jstoday));
     // console.log(this.jstoday);
-    
-    
     
   }
 
