@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { DataservicesService } from 'src/app/service/dataservices.service';
-import { Router } from '@angular/router';
+import { Params, Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { Customer } from '../../customer.model';
 
 @Component({
   selector: 'app-customer-new',
@@ -12,6 +13,10 @@ import { ActivatedRoute } from '@angular/router';
 export class CustomerNewComponent implements OnInit {
 
   id:any;
+  editMode = false;
+  allData!: Customer[];
+  arr!: Customer;
+
 
   
 
@@ -22,10 +27,17 @@ export class CustomerNewComponent implements OnInit {
     
   }
 
-
-  
-  
   ngOnInit(): void {
+    this.route.params
+      .subscribe(
+        (params:Params) =>{
+          this.id = params['id'];
+          console.log(this.id);
+          this.editMode = params['id'] != null;
+          console.log (this.editMode);
+          this.intiForm();
+        }
+      )
   }
 
 
@@ -41,8 +53,27 @@ export class CustomerNewComponent implements OnInit {
     
   }
 
-  onDone(){
+  private intiForm(){
+    let id = '';
+    let name = '';
+    let email = '';
+    let phoneNo ;
+    let address = '';
+    let dateTime = '';
     
+    if(this.editMode){
+     this.allData = this._customerData.getData();
+     const filterd = this.allData.filter(ele => ele.id === this.id);
+     this.arr = filterd[0];
+     console.log(this.arr);
+
+     id = this.arr.id;
+     name = this.arr.name;
+     email = this.arr.email;
+     phoneNo = this.arr.phoneNo;
+     address = this.arr.address;
+     dateTime = this.arr.dateTime;
+    }
   }
 
 
