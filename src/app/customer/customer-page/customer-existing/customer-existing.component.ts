@@ -37,5 +37,4 @@ export class CustomerExistingComponent implements OnInit {
     // this._getdata.sendId(id)
     this.router.navigate(['products/nextpage', id]);
   }  
-
 }

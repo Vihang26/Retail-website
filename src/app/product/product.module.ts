@@ -8,6 +8,8 @@ import { ProductDataComponent } from './products/product-data/product-data.compo
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FilterPipe2 } from './products/product-data/filter2.pipe';
+import { CustomerNewComponent } from '../customer/customer-page/customer-new/customer-new.component';
+import { CustomerModule } from '../customer/customer.module';
 
 
 
@@ -29,7 +31,8 @@ import { FilterPipe2 } from './products/product-data/filter2.pipe';
     ToastrModule.forRoot({
       timeOut: 800,
       preventDuplicates: true
-    })
+    }),
+    CustomerModule
   ]
 })
 export class ProductModule {

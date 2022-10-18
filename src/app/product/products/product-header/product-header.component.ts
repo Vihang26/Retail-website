@@ -44,8 +44,6 @@ export class ProductHeaderComponent implements OnInit {
   edit(){
     this.router.navigate(['../customer/customer-page/new'])
     console.log(this.id);
-
-    
   }
 
 

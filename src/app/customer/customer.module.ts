@@ -25,7 +25,8 @@ import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
     Ng2FilterPipeModule,
   ],
   exports:[
-    CustomerPageComponent
+    CustomerPageComponent,
+    CustomerNewComponent
   ]
 })
 export class CustomerModule { 

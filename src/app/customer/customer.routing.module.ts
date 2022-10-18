@@ -9,9 +9,9 @@ const proroutes: Routes = [
   {path: '', children:[
   { path : 'customer-page',canActivate:[AuthGuard],  component: CustomerPageComponent, children:[
     {path: 'new', component: CustomerNewComponent},
-    {path : 'existing', component: CustomerExistingComponent},
+    {path : 'existing', component: CustomerExistingComponent}
   ]},
-  {path: '../customer/customer-page/new/:id', component: CustomerNewComponent}
+  // {path: '../customer/customer-page/new/:id', component: CustomerNewComponent}
 ]}
   ];
 @NgModule({
