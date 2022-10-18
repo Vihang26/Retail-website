@@ -1,8 +1,11 @@
 <nav class="navbar bg-light">
   <div class="container-fluid">
     <a class="circular--landscape" href="#">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYTxXD9xU9PLqcdGsOCwCymOONhDVFjJ0ZfGJ7aZoqivwtpJXbT0JYUJeZSBH0p3Q8KtQ&usqp=CAU" style="border-radius:50% ;" alt="" width="50" height="50">
+      <img src="../../../../assets/images/logo final.png" alt="" width="50" height="50">
     </a>
+    <div class="col-md-9">
+      <input class="form-control me-2" name="search" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="filterSearch" >
+    </div>
     <form class="d-flex" role="search">
       <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" 
       fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16"   
@@ -18,9 +21,7 @@
       <div class="row d-flex justify-content-center align-items-center ">
         <div class="col-10">
 
-          <div class="col-md-10">
-            <input class="form-control me-2" name="search" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="filterSearch" >
-          </div>
+
           <br>
           <div class="card rounded-3 mb-4" *ngFor="let product of availProducts | filter : filterSearch ">
             <div class="card-body p-1">
