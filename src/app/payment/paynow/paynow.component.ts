@@ -18,6 +18,7 @@ export class PaynowComponent implements OnInit {
   arr!:Customer;
   allData: Customer[];
   localItem!: string | null;
+
   myDate:any = new Date();
 
 
@@ -25,7 +26,6 @@ export class PaynowComponent implements OnInit {
 
   constructor(private route:ActivatedRoute,private _getdata:DataservicesService,private router: Router,private datePipe: DatePipe){
 
-    this.myDate = this.datePipe.transform(this.myDate, 'yyyy-MM-dd');
 
     this.id=this.route.snapshot.params['id'];
     this.allData = this._getdata.getData();
@@ -44,6 +44,19 @@ export class PaynowComponent implements OnInit {
 
   ngOnInit(): void {
     this.CartDetails();
+    this.loadCart();
+    
+    this.myDate = this.datePipe.transform(this.myDate, 'yyyy-MM-dd');
   }
+
+  total: number = 0;
+loadCart(){
+  if(localStorage.getItem('localCart')){
+    this.getCartDetails = JSON.parse(localStorage.getItem('localCart') || "[]")
+    this.total = this.getCartDetails.reduce(function(acc: number, val: { price: number; quantity: number; }){
+      return acc + (val.price * val.quantity); 
+    }, 0) ;
+  }
+}
 
 }
