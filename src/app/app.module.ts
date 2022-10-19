@@ -9,6 +9,7 @@ import { DataservicesService } from './service/dataservices.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginModule } from './login/login.module';
 import { AuthGuard } from './auth.guard';
+import { PaymentModule } from './payment/payment.module';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { AuthGuard } from './auth.guard';
     AppRoutingModule,
     ProductModule,
     BrowserAnimationsModule,
-    LoginModule
+    LoginModule,
+    PaymentModule
   ],
   providers: [
     DataservicesService,

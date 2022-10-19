@@ -69,4 +69,8 @@ loadCart(){
   }
 }
 
+payment(){
+  this.router.navigate(['paynow'],{relativeTo:this.route});
+}
+
 }
