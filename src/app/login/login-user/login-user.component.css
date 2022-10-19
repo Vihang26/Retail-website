@@ -6,3 +6,10 @@
 input.ng-invalid.ng-touched {
     border: 1px solid red ;
   }
+
+
+#loginCard{ 
+    background-image: url("../../../assets/images/if.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+}

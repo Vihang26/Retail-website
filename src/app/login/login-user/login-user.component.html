@@ -1,11 +1,13 @@
-<section class="vh-100" style="background-color: #508bfc;">
+<section class="vh-100" style="background-color: #18509b;">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-        <div class="card shadow-2-strong" style="border-radius: 1rem;">
+        <div class="card shadow-2-strong" id="loginCard" style="border-radius: 1rem;">
           <div class="card-body p-5 text-center">
-
-            <h1 class="heading"><b>Sign in</b></h1>
+            <img src="../../../assets/images/logo final.png">
+            <h1 class="heading">
+              <b>Log In</b>
+            </h1>
             <form (ngSubmit)="onSubmit(f)" #f="ngForm"  autocomplete="off">
             <div class="form-outline mb-4">
               <!-- <label class="form-label" for="typeEmailX-2" >Email</label> -->
@@ -38,7 +40,8 @@
 
             <button class="btn btn-primary btn-lg btn-block" 
             type="submit" 
-            [disabled]="!f.valid">Login</button>
+            [disabled]="!f.valid"
+            style="background-color: #18509b; border: #18509b;">Login</button>
 
           </form>
 
