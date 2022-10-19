@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormGroup, NgForm } from '@angular/forms';
 import { DataservicesService } from 'src/app/service/dataservices.service';
 import { Params, Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
@@ -16,15 +16,10 @@ export class CustomerNewComponent implements OnInit {
   editMode = false;
   allData!: Customer[];
   arr!: Customer;
+  userModel! : Customer;
 
-
-  
-
-  // localItem:
   constructor(private _customerData:DataservicesService, private router: Router, private route: ActivatedRoute) { 
 
-    
-    
   }
 
   ngOnInit(): void {
@@ -38,10 +33,12 @@ export class CustomerNewComponent implements OnInit {
           this.intiForm();
         }
       )
+
+
   }
 
 
-  onSubmit(form: NgForm){
+  onSubmit(form:NgForm){
     this._customerData.setdata(form.value);
   //  this.localItem = localStorage.getItem("customerData");
     // this.router.navigate(['../','/nextpage',this.id]),{relativeTo:this.route}
@@ -67,15 +64,14 @@ export class CustomerNewComponent implements OnInit {
      this.arr = filterd[0];
      console.log(this.arr);
 
-     id = this.arr.id;
-     name = this.arr.name;
-     email = this.arr.email;
-     phoneNo = this.arr.phoneNo;
-     address = this.arr.address;
-     dateTime = this.arr.dateTime;
+     this.userModel = this.arr;   
+    //  name = this.arr.name;
+    //  email = this.arr.email;
+    //  phoneNo = this.arr.phoneNo;
+    //  address = this.arr.address;
+    //  dateTime = this.arr.dateTime;
+
+
     }
-  }
-
-
-  
+  }  
 }
