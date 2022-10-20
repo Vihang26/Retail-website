@@ -16,7 +16,7 @@ export class CustomerNewComponent implements OnInit {
   editMode = false;
   allData!: Customer[];
   arr!: Customer;
-  userModel! : Customer;
+  userModel = new Customer('','','',0,'','');
 
   constructor(private _customerData:DataservicesService, private router: Router, private route: ActivatedRoute) { 
 
@@ -43,7 +43,7 @@ export class CustomerNewComponent implements OnInit {
   //  this.localItem = localStorage.getItem("customerData");
     // this.router.navigate(['../','/nextpage',this.id]),{relativeTo:this.route}
 
-    // this.router.navigate(['../','existing'],{relativeTo:this.route})
+    this.router.navigate(['../','existing'],{relativeTo:this.route})
 
     // localStorage.setItem("Date&Time",JSON.stringify(this.jstoday));
     // console.log(this.jstoday);
@@ -51,27 +51,14 @@ export class CustomerNewComponent implements OnInit {
   }
 
   private intiForm(){
-    let id = '';
-    let name = '';
-    let email = '';
-    let phoneNo ;
-    let address = '';
-    let dateTime = '';
-    
+
     if(this.editMode){
      this.allData = this._customerData.getData();
      const filterd = this.allData.filter(ele => ele.id === this.id);
      this.arr = filterd[0];
      console.log(this.arr);
 
-     this.userModel = this.arr;   
-    //  name = this.arr.name;
-    //  email = this.arr.email;
-    //  phoneNo = this.arr.phoneNo;
-    //  address = this.arr.address;
-    //  dateTime = this.arr.dateTime;
-
-
+     this.userModel = this.arr;  
     }
   }  
 }
