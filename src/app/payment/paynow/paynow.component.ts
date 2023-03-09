@@ -22,8 +22,6 @@ export class PaynowComponent implements OnInit {
   myDate:any = new Date();
 
 
- 
-
   constructor(private route:ActivatedRoute,private _getdata:DataservicesService,private router: Router,private datePipe: DatePipe){
 
 
@@ -46,7 +44,7 @@ export class PaynowComponent implements OnInit {
     this.CartDetails();
     this.loadCart();
     
-    this.myDate = this.datePipe.transform(this.myDate, 'yyyy-MM-dd');
+    this.myDate = this.datePipe.transform(this.myDate, 'yyyy-MM-dd hh:mm:ss a');
   }
 
   total: number = 0;
@@ -57,6 +55,11 @@ loadCart(){
       return acc + (val.price * val.quantity); 
     }, 0) ;
   }
+}
+
+Ondone(){
+  localStorage.removeItem('localCart');
+  this.router.navigate(['../../../../','customer','customer-page','new'],{relativeTo:this.route})
 }
 
 }

@@ -10,7 +10,7 @@ const proroutes: Routes = [
     {path: '', children:[
         {path: 'nextpage/:id',canActivate:[AuthGuard], component:ProductHeaderComponent},
         {path: 'nextpage/:id/productData',canActivate:[AuthGuard], component:ProductDataComponent},
-        {path: '../customer/customer-page/new/:id', component: CustomerNewComponent},
+        // {path: '../customer/customer-page/new/:id', component: CustomerNewComponent},
         {path: 'nextpage/:id/paynow', component: PaynowComponent}
     ]}
     

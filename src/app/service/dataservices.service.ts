@@ -12,25 +12,25 @@ export class DataservicesService {
   
   public jstoday: string='';
 
-  customers = [
-    {
-      id : 1,
-      name : 'abc',
-      email: 'abc@gmail.com',
-      phoneNo : 65476588 
-  },
-  {
-    id : 2,
-    name : 'sdcs',
-    email: '123@gmail.com',
-    phoneNo : 65476589 
-},
-{
-  id : 3,
-  name : 'dscsd',
-  email: '678@gmail.com',
-  phoneNo : 65476580
-}];
+//   customers = [
+//     {
+//       id : 1,
+//       name : 'abc',
+//       email: 'abc@gmail.com',
+//       phoneNo : 65476588 
+//   },
+//   {
+//     id : 2,
+//     name : 'sdcs',
+//     email: '123@gmail.com',
+//     phoneNo : 65476589 
+// },
+// {
+//   id : 3,
+//   name : 'dscsd',
+//   email: '678@gmail.com',
+//   phoneNo : 65476580
+// }];
 
   arr:{id:string, name : string ,email: string, phoneNo: number, address: string, dateTime: string}[] = [];
 //  arr! : Customer[];

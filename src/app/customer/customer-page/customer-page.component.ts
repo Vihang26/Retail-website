@@ -16,6 +16,8 @@ export class CustomerPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
+
   onNewCustomer(){
     this.router.navigate(['new'],{relativeTo:this.route})
   }

@@ -47,6 +47,4 @@ export class ProductHeaderComponent implements OnInit {
   }
 
 
-  
-
 }
