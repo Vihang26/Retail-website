@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-product-basket',
@@ -8,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ProductBasketComponent implements OnInit {
 
-  constructor(private route:ActivatedRoute,private router: Router) { }
+  constructor(private route:ActivatedRoute,private router: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.CartDetails();
@@ -16,10 +17,10 @@ export class ProductBasketComponent implements OnInit {
   }
 
   productData(){
-    this.router.navigate(['productData'],{relativeTo:this.route});
-  }
 
-  
+    this.router.navigate(['productData'],{relativeTo:this.route});
+
+  }
 
   getCartDetails:any=[];
   CartDetails(){
@@ -70,7 +71,16 @@ loadCart(){
 }
 
 payment(){
-  this.router.navigate(['paynow'],{relativeTo:this.route});
+  if (JSON.parse(localStorage.getItem('localCart') || "[]").length === 0) {
+    this.toastr.warning("Basket is Empty!"), {
+      positionClass: 'toast-top-right' 
+   };
+  }
+  else{
+    // console.log('localstorage is not empty!');
+    
+    this.router.navigate(['paynow'],{relativeTo:this.route, skipLocationChange: true});
+  }
 }
 
 }

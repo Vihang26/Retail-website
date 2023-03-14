@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FilterPipe2 } from './products/product-data/filter2.pipe';
 import { CustomerNewComponent } from '../customer/customer-page/customer-new/customer-new.component';
 import { CustomerModule } from '../customer/customer.module';
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -27,6 +27,7 @@ import { CustomerModule } from '../customer/customer.module';
     CommonModule,
     RouterModule,
     FormsModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       timeOut: 800,

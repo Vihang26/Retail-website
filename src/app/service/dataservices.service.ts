@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Customer } from '../customer/customer.model';
 import { formatDate } from '@angular/common';
+import {HttpClient} from '@angular/common/http'
 
 @Injectable({
   providedIn: 'root'
@@ -35,7 +36,7 @@ export class DataservicesService {
   arr:{id:string, name : string ,email: string, phoneNo: number, address: string, dateTime: string}[] = [];
 //  arr! : Customer[];
 
-constructor(){
+constructor(private http: HttpClient){
   console.log('service Module loaded');   
 }
 
@@ -49,6 +50,17 @@ constructor(){
     let randint = Math.floor(Math.random()* (max-min) + min );
     const randid = str1.concat (String(randint));
     return randid;
+  }
+
+  getProductDetails(){
+    let apiUrl = 'https://dummyjson.com/products/search?q=phone'
+    return this.http.get(apiUrl);
+    // let data;
+    // fetch('https://dummyjson.com/products/search?q=phone')
+    // .then(res => console.log(res.json()));
+    
+    
+    // return data
   }
 
   setdata(value:Customer){

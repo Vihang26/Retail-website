@@ -13,8 +13,8 @@ const routes:Routes = [
    { path: 'products',
     loadChildren: () => import('./product/product.routing.module').then(x => x.ProductRoutingModule)},
 
-    { path: 'payment',
-      loadChildren: () => import('./payment/payment.module').then(x => x.PaymentModule)}
+    // { path: 'payment',
+    //   loadChildren: () => import('./payment/payment.module').then(x => x.PaymentModule)}
 ]
 
 @NgModule({

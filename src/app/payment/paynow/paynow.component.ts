@@ -3,6 +3,7 @@ import { Customer } from 'src/app/customer/customer.model';
 import { DataservicesService } from 'src/app/service/dataservices.service';
 import { Router,ActivatedRoute, RouterLink } from '@angular/router';
 import { DatePipe } from '@angular/common';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-paynow',
@@ -22,7 +23,7 @@ export class PaynowComponent implements OnInit {
   myDate:any = new Date();
 
 
-  constructor(private route:ActivatedRoute,private _getdata:DataservicesService,private router: Router,private datePipe: DatePipe){
+  constructor(private route:ActivatedRoute,private _getdata:DataservicesService,private router: Router,private datePipe: DatePipe,  private toastr: ToastrService){
 
 
     this.id=this.route.snapshot.params['id'];

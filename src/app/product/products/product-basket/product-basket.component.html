@@ -14,7 +14,7 @@
             <thead>
               <tr>
                 <th scope="col">Image</th>
-                <th scope="col">product Name</th>
+                <th scope="col">product title</th>
                 <th scope="col">Price</th>
                 <th scope="col">quantity</th>
                 <th scope="col">sub Total</th>
@@ -23,8 +23,8 @@
             </thead>
             <tbody>
               <tr *ngFor="let getCartDetail of getCartDetails; let i = index ">
-                <td><img src="{{getCartDetail.imgPath}}" width="70px" height="70px"></td>
-                <td>{{getCartDetail.name}}</td>
+                <td><img src="{{getCartDetail.images[1]}}" width="70px" height="70px"></td>
+                <td>{{getCartDetail.title}}</td>
                 <td>$ {{getCartDetail.price}}</td>
                 <td>
                   <svg xmlns="http://www.w3.org/2000/svg" 
